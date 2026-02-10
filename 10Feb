@@ -1,0 +1,45 @@
+## 📅 Date
+February 10, 2026
+
+## 🎯 Goal of the Day
+Install Windows Server on VirtualBox, resolve installation issues, and begin configuring Active Directory.
+
+## 📝 Steps Taken
+- Attempted to install Windows Server free version.  
+- Encountered error: *“Windows cannot find the Microsoft Software License Terms…”*  
+- Fix:  
+  - Removed server.  
+  - Re-added server but did not insert ISO during creation.  
+  - Created VirtualBox VM first, then linked ISO in **Storage** settings.  
+- Used this video as reference: [YouTube Guide](https://www.youtube.com/watch?v=tFdBOSnlqvs).  
+- Successfully installed Windows Server.  
+- Installed Guest Additions to fix mouse lag and screen size compatibility:  
+  - Devices → Insert Guest Addition CD Image → Run `VBoxWindowsAdditions-amd64`.  
+- Created virtual machine with both internet NIC and internal NIC.  
+- Assigned IP address to internal NIC.  
+- Launched Server Manager → Added Roles → Installed Active Directory Domain Services.  
+- Added a new forest named `mydomain.com`.
+
+## 📸 Evidence
+- Error message screenshot (noted).  
+- Reference video link.  
+- Commands/configuration steps for Guest Additions and AD setup.
+
+## 🔍 Key Concepts Learned
+- Importance of proper ISO mounting in VirtualBox.  
+- Guest Additions improve usability (mouse integration, screen resizing).  
+- Basics of Active Directory setup: forests, domains, and NIC configuration.  
+
+## ⚠️ Challenges & Fixes
+- **Challenge**: Installation failed due to ISO mounting error.  
+- **Fix**: Adjusted VirtualBox setup process by linking ISO after VM creation.  
+- **Challenge**: Mouse lag and screen resolution issues.  
+- **Fix**: Installed VirtualBox Guest Additions.  
+
+## 💡 Reflection
+This session taught me the importance of careful VM setup and troubleshooting. IAM engineers often need to solve environment issues before working on identity systems. Setting up AD gave me my first hands-on experience with forests and domains, which are foundational IAM concepts.
+
+## 📌 Next Steps
+- Explore Group Policy Objects (GPOs).  
+- Configure password policies for domain users.  
+- Document how policies enforce authentication and authorization rules.
